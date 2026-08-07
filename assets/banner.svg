@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070b12"/>
+      <stop offset="48%" stop-color="#0a1220"/>
+      <stop offset="100%" stop-color="#12060c"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="18%" cy="12%" r="55%">
+      <stop offset="0%" stop-color="#ff2d4d" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#ff2d4d" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="88%" cy="78%" r="50%">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.34"/>
+      <stop offset="100%" stop-color="#00e5ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#d90429"/>
+      <stop offset="55%" stop-color="#ff2d4d"/>
+      <stop offset="100%" stop-color="#ff6b81"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+  <path d="M920 0 L1200 0 L1200 630 L760 630 Z" fill="#ff2d4d" opacity="0.07"/>
+  <g opacity="0.14" stroke="#00e5ff" stroke-width="1">
+    <path d="M0 120 H1200 M0 240 H1200 M0 360 H1200 M0 480 H1200"/>
+    <path d="M150 0 V630 M300 0 V630 M450 0 V630 M600 0 V630 M750 0 V630 M900 0 V630 M1050 0 V630"/>
+  </g>
+  <text x="64" y="88" fill="#ff2d4d" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="24" font-weight="800" letter-spacing="5">CRITICAL TOOL:</text>
+  <text x="64" y="142" fill="#e8edf5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="40" font-weight="800">PC OPTIMIZER</text>
+  <rect x="64" y="168" width="700" height="44" rx="8" fill="url(#bar)"/>
+  <rect x="64" y="168" width="700" height="20" rx="8" fill="url(#shine)"/>
+  <text x="84" y="197" fill="#ffffff" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="17" font-weight="700">STREAMLINED WINDOWS TOOLKIT · PC OPTIMIZER</text>
+  <text x="64" y="250" fill="#8fa3bc" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="700">FOCUS</text>
+  <text x="140" y="250" fill="#ff2d4d" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="800">PC OPTIMIZER</text>
+  <text x="64" y="278" fill="#8fa3bc" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="700">CHANNEL</text>
+  <text x="160" y="278" fill="#ff2d4d" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="800">GITHUB PAGES DOWNLOAD</text>
+  <text x="64" y="300" fill="#8fa3bc" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">FRAME PACE</text><rect x="200" y="286" width="420" height="14" rx="7" fill="#0b1c33" stroke="#00e5ff" stroke-opacity="0.35"/><rect x="200" y="286" width="394" height="14" rx="7" fill="url(#bar)"/><text x="632" y="300" fill="#00e5ff" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">94%</text>
+  <text x="64" y="336" fill="#8fa3bc" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">STABILITY</text><rect x="200" y="322" width="420" height="14" rx="7" fill="#0b1c33" stroke="#00e5ff" stroke-opacity="0.35"/><rect x="200" y="322" width="344" height="14" rx="7" fill="url(#bar)"/><text x="632" y="336" fill="#00e5ff" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">82%</text>
+  <text x="64" y="372" fill="#8fa3bc" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">CLEAR PATH</text><rect x="200" y="358" width="420" height="14" rx="7" fill="#0b1c33" stroke="#00e5ff" stroke-opacity="0.35"/><rect x="200" y="358" width="403" height="14" rx="7" fill="url(#bar)"/><text x="632" y="372" fill="#00e5ff" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700">96%</text>
+  <g transform="translate(820,140)">
+    <path d="M70 48 H210 Q250 48 250 88 V170 Q250 230 140 252 Q30 230 30 170 V88 Q30 48 70 48 Z" fill="#ff2d4d" opacity="0.14"/>
+    <path d="M70 48 H210 Q250 48 250 88 V170 Q250 230 140 252 Q30 230 30 170 V88 Q30 48 70 48 Z" fill="none" stroke="#ff2d4d" stroke-width="5" opacity="0.95"/>
+    <path d="M82 68 H198 Q222 68 222 96 V168 Q222 210 140 228 Q58 210 58 168 V96 Q58 68 82 68 Z" fill="#120814" stroke="#00e5ff" stroke-width="2.5" opacity="0.95"/>
+    <path d="M96 92 H184 Q200 92 200 112 V160 Q200 192 140 206 Q80 192 80 160 V112 Q80 92 96 92 Z" fill="none" stroke="#00e5ff" stroke-width="1.4" opacity="0.45" stroke-dasharray="5 7"/>
+    <text x="140" y="128" text-anchor="middle" fill="#ff2d4d" font-family="Segoe UI, sans-serif" font-size="20" font-weight="800">SECURE</text>
+    <text x="140" y="156" text-anchor="middle" fill="#e8edf5" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700">BUILD</text>
+  </g>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="700">
+    <rect x="64" y="540" width="200" height="42" rx="8" fill="#0b1c33" stroke="#1e90ff"/>
+    <text x="164" y="567" text-anchor="middle" fill="#dbeafe">DOWNLOAD RELEASE</text>
+    <rect x="280" y="540" width="150" height="42" rx="8" fill="#0b1c33" stroke="#1e90ff"/>
+    <text x="355" y="567" text-anchor="middle" fill="#dbeafe">VIEW SOURCE</text>
+    <rect x="450" y="540" width="170" height="42" rx="8" fill="#0b1c33" stroke="#1e90ff"/>
+    <text x="535" y="567" text-anchor="middle" fill="#dbeafe">OPEN PAGES</text>
+  </g>
+</svg>
